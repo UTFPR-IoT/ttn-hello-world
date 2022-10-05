@@ -120,7 +120,7 @@ Line 37-42
 #### Heltec LoRa V2
 The hardware used was Heltec LoRa V2.  
 ![Heltec Lora V2 Pinout](/assets/images/heltec.png)  
-To program by Arduino IDE is necessary add the address http://arduino.esp8266.com/stable/package_esp8266com_index.json on **File > Preferences > Additional Boards Manager URL**  
+To program by Arduino IDE is necessary add the address https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/releases/download/0.0.6/package_heltec_esp32_index.json on **File > Preferences > Additional Boards Manager URL**  
 ![Arduino preferences](https://user-images.githubusercontent.com/276504/50922035-c31aea80-1449-11e9-862e-57945f6f8b6a.png)  
 The pinmap for this board is
 ```
