@@ -13,7 +13,7 @@
   2.3 [Pinmap](#pinmap)
 3. [Hardware](#hardware)  
   3.1 [Heltec LoRa V2](#heltec-lora-v2)  
-  3.2 [RFM95w](#rfm95w)  
+  3.2 [Arduino IDE configurations](#arduino-ide-configurations)  
 5. [Other issues](#other-issues)  
 6. [Credits](#credits)  
 
@@ -120,8 +120,6 @@ Line 37-42
 #### Heltec LoRa V2
 The hardware used was Heltec LoRa V2.  
 ![Heltec Lora V2 Pinout](/assets/images/heltec.png)  
-To program by Arduino IDE is necessary add the address https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/releases/download/0.0.6/package_heltec_esp32_index.json on **File > Preferences > Additional Boards Manager URL**  
-![Arduino preferences](https://user-images.githubusercontent.com/276504/50922035-c31aea80-1449-11e9-862e-57945f6f8b6a.png)  
 The pinmap for this board is
 ```
     .nss = 18,
@@ -130,14 +128,15 @@ The pinmap for this board is
     .dio = {26, 35, 34},
 ```
 
-#### RFM95w
-RFM95w is a LoRa Module.  
-![RFM95w](https://5.imimg.com/data5/SELLER/Default/2022/1/NN/XT/WO/1833510/tap-sensor-module-for-arduino-500x500.JPG)  
-Its pinmap depends of connections with a microcontroller.
+#### Arduino IDE configurations
+To program by Arduino IDE is necessary add the address https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/releases/download/0.0.6/package_heltec_esp32_index.json on **File > Preferences > Additional Boards Manager URL**.  
+![Arduino preferences](https://user-images.githubusercontent.com/276504/50922035-c31aea80-1449-11e9-862e-57945f6f8b6a.png)  
+After that step, is necessary add the board. On **Tools > Board > Board Manager** search for **Heltec ESP32** and install.  
+At last, on **Tools > Board > ESP32 Arduino** select **Heltec Wifi LoRa 32(V2)**.  
 
 ## Other issues
 #### hal/hal.h hal_init()
-In my tests, I had some issues with the function `hal_init()` on `/arduino-lmic/src/hal/hal.cpp` because duplicity with another function alredy setted on Heltec Lora v2 board to Arduino IDE. So I just change the name of this function and everythings worked fine.
+In my tests, using Visual Code PlatformIO, I had some issues with the function `hal_init()` on `/arduino-lmic/src/hal/hal.cpp` because duplicity with another function alredy setted on Heltec Lora v2 board to Arduino IDE. So I just change the name of this function and everythings worked fine.
 
 
 ## Credits
