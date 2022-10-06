@@ -140,4 +140,5 @@ In my tests, using Visual Code PlatformIO, I had some issues with the function `
 
 
 ## Credits
-This guide is based on [ERRC 2021](https://github.com/afpastorio/ERRC-2021) repository developed by @afpastorio and was written by @jamersonm
+This guide is based on [ERRC 2021](https://github.com/afpastorio/ERRC-2021) repository developed by
+Francisco Pastório, A., Pedro Cardoso Amâncio de Sá, J., Tavares de Camargo, E., Alexandre Spanhol, F., Antonio Rodrigues, L., & Rossato, J. (2021). Fundamentos de LoRaWAN - Teoria e Prática [Computer software]. https://github.com/afpastorio/ERRC-2021
