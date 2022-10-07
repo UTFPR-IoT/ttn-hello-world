@@ -181,7 +181,7 @@ const lmic_pinmap lmic_pins = {
 
 ## Other issues
 #### hal/hal.h hal_init()
-- In my tests, using Visual Code PlatformIO, I had some issues with the function `hal_init()` on `/arduino-lmic/src/hal/hal.cpp` because duplicity with another function alredy setted on Heltec Lora v2 board to Arduino IDE. So I just change the name of this function and everythings worked fine.
+- In my tests, using Visual Code PlatformIO, I had some issues with the function `hal_init()` on `/arduino-lmic/src/hal/hal.cpp` because duplicity with another function alredy setted on Heltec Lora v2 board to PlatformIO. So I just change the name of this function and everythings worked fine.
 
 
 ## Credits
