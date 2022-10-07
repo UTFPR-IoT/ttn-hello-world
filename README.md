@@ -1,5 +1,4 @@
-<h1 align="center"> TTNHelloWorld - Guide </h1>
-![Hello, World!](/assets/images/hello-world.png)
+![hello world](/assets/images/hello-world.gif) 
 
 ## Menu
 
@@ -25,7 +24,7 @@ At first, log in (or create an account) on [The Things Network](https://console.
 #### Application
 On **Applications** tab, press the blue button **+ Add application**.  
 Set Application ID. Optionally, set an Application name and add a description.  
-![Application configuration on TTN](/assets/images/application.png).  
+![Application configuration on TTN](/assets/images/application.png)  
 Finally, **Create application**.  
 Choose between [OTAA](#otaa-end-device) or [ABP](#abp-end-device) configuration.  
 
@@ -38,7 +37,7 @@ Choose the **Manually** tab.
 - AppEUI: *must have, at least, a non-zero digit*
 - AppKey: *can be generate aumatically*
 - End device ID: *An ID for the device*  
-![End device OTAA configuration on TTN](/assets/images/enddeviceotta.png).  
+![End device OTAA configuration on TTN](/assets/images/enddeviceotta.png)  
 Finally, **Register end device**
 
 #### ABP end device
