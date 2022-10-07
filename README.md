@@ -19,48 +19,94 @@
 
 
 ## TTN configurations
-At first, log in (or create an account) on [The Things Network](https://console.cloud.thethings.network/). Choose Australia 1.  
+- At first, log in (or create an account) on [The Things Network](https://console.cloud.thethings.network/). Choose Australia 1.  
 
 #### Application
-On **Applications** tab, press the blue button **+ Add application**.  
-Set Application ID. Optionally, set an Application name and add a description.  
+- On **Applications** tab, press the blue button **+ Add application**.  
+- Set Application ID. Optionally, set an Application name and add a description.  
 ![Application configuration on TTN](/assets/images/application.png)  
-Finally, **Create application**.  
-Choose between [OTAA](#otaa-end-device) or [ABP](#abp-end-device) configuration.  
+- Finally, **Create application**.  
+- Choose between [OTAA](#otaa-end-device) or [ABP](#abp-end-device) configuration.  
 
 #### OTAA end device
-Once in a application, enter **End devices** tab and press the blue button **+ Add end device**.   
-Choose the **Manually** tab.
-- Frequency plan: Australia 915-928 MHz, FSB 2 (used bt TTN)
-- LoRaWAN Version: LoRaWAN Specification 1.0.3
-- DevEUI: *can be generate automatically*
-- AppEUI: *must have, at least, a non-zero digit*
-- AppKey: *can be generate aumatically*
-- End device ID: *An ID for the device*  
-![End device OTAA configuration on TTN](/assets/images/enddeviceotta.png)  
-Finally, **Register end device**
+- Once in a application, enter **End devices** tab and press the blue button **+ Add end device**.   
+- Choose the **Manually** tab and set the option below.  
+ <table>
+  <tr>
+    <td>Frequency plan</td>
+    <td>Australia 915-928 MHz, FSB 2 (used bt TTN)</td>
+  </tr>
+  <tr>
+    <td>LoRaWAN Version</td>
+    <td>LoRaWAN Specification 1.0.3</td>
+  </tr>
+  <tr>
+    <td>DevEUI</td>
+    <td>*can be generate automatically*</td>
+  </tr>
+  <tr>
+    <td>AppEUI</td>
+    <td>*must have, at least, a non-zero digit*</td>
+  </tr>
+  <tr>
+    <td>AppKey</td>
+    <td>*can be generate aumatically*</td>
+  </tr>
+  <tr>
+    <td>End device ID</td>
+    <td>*An ID for the device* </td>
+  </tr>
+</table> 
+
+![End device OTAA configuration on TTN](/assets/images/enddeviceotta.png)   
+- Finally, **Register end device**
 
 #### ABP end device
-Once in a application, enter **End devices** tab and press the blue button **+ Add end device**.   
-Choose the **Manually** tab.
-- Frequency plan: Australia 915-928 MHz, FSB 2 (used bt TTN)
-- LoRaWAN Version: LoRaWAN Specification 1.0.3  
+- Once in a application, enter **End devices** tab and press the blue button **+ Add end device**.   
+- Choose the **Manually** tab and set the option below.  
+ <table>
+  <tr>
+    <td>Frequency plan</td>
+    <td>Australia 915-928 MHz, FSB 2 (used bt TTN)</td>
+  </tr>
+  <tr>
+    <td>LoRaWAN Version</td>
+    <td>LoRaWAN Specification 1.0.3</td>
+  </tr>
+</table> 
 
-Expand the session **Show advanced activation, LoRaWAN class and cluster settings**
-On **Activation mode** select **Activation by personalization (ABP)** option.
+- Expand the session **Show advanced activation, LoRaWAN class and cluster settings**
+- On **Activation mode** select **Activation by personalization (ABP)** option.  
+ <table>
+  <tr>
+    <td>DevEUI</td>
+    <td>*can be generate automatically*</td>
+  </tr>
+  <tr>
+    <td>Device address</td>
+    <td>*can be generate automatically*/td>
+  </tr>
+  <tr>
+    <td>AppSKey</td>
+    <td>*can be generate automatically*/td>
+  </tr>
+  <tr>
+    <td>NwkSKey</td>
+    <td>*can be generate automatically*/td>
+  </tr>
+  <tr>
+    <td>End device ID</td>
+    <td>*An ID for the device* /td>
+  </tr>
+</table> 
 
-- DevEUI: *can be generate automatically*
-- Device address: *can be generate automatically*
-- AppSKey: *can be generate aumatically*
-- NwkSKey: *can be generate automatically*
-- End device ID: *An ID for the device*  
 ![End device OTAA configuration on TTN](/assets/images/enddeviceabp.png)  
-Finally, **Register end device**
+- Finally, **Register end device**
 
 #### Payload Formatter
-On an end device page, go to **Payload formatter** tab.  
-On **Uplink** tab, change **Formatter type** to **Custom JavaScript formatter**.  
-Input the script below on **Formater code** screen.  
+- On an end device page, go to **Payload formatter** tab.  
+- On **Uplink** tab, change **Formatter type** to **Custom JavaScript formatter**.  
+- Input the script below on **Formater code** screen.  
 ```
 function decodeUplink(input) {
   return {
@@ -77,18 +123,18 @@ function decodeUplink(input) {
 ## Software
 
 #### End devices key configuration  
-On **`main.ino`**, select the end device activation mode by commenting/uncommenting the option.  
+- On **`main.ino`**, select the end device activation mode by commenting/uncommenting the option.  
 ```
 #define USE_OTAA
 //#define USE_ABP
 ```
-Copy and paste the end device keys on the reserverd variables (lines 13-15 to ABP or lines 22-26 to OTAA)  
-In case of OTAA configuration the keys AppEUI and DevEUI must be in lsb format.  
+- Copy and paste the end device keys on the reserverd variables (lines 13-15 to ABP or lines 22-26 to OTAA)  
+*important:* In case of OTAA configuration the keys AppEUI and DevEUI must be in lsb format.  
   - You can copy alredy formatted directly by the end device page on TTN. **<>** *Toggle array formatting*, <- -> *Switch byte order*
 
 #### LMIC library
-Import [mcci_catena/arduino-lmic](https://github.com/mcci-catena/arduino-lmic) library into your project    
-On `/project_config/lmic_project_config.h` comment the line **`#define CFG_us915 1`** and uncomment the line **`//#define CFG_au915 1`**  
+- Import [mcci_catena/arduino-lmic](https://github.com/mcci-catena/arduino-lmic) library into your project    
+- On `arduino-lmic/project_config/lmic_project_config.h` comment the line **`#define CFG_us915 1`** and uncomment the line **`//#define CFG_au915 1`**  
 This file should be:  
 ```
 // project-specific definitions
@@ -104,7 +150,7 @@ This file should be:
 ```
 
 #### Pinmap
-Set LoRa pins on struct
+- Set LoRa pins on struct (lines 37-42).
 ```
 const lmic_pinmap lmic_pins = {
     .nss =  ,
@@ -113,14 +159,13 @@ const lmic_pinmap lmic_pins = {
     .dio = { , , },
 };
 ```
-Line 37-42
 
 
 ## Hardware
 #### Heltec LoRa V2
-The hardware used was Heltec LoRa V2.  
+- The hardware used was Heltec LoRa V2.  
 ![Heltec Lora V2 Pinout](/assets/images/heltec.png)  
-The pinmap for this board is
+- The pinmap for this board is
 ```
     .nss = 18,
     .rxtx = LMIC_UNUSED_PIN,
@@ -129,16 +174,16 @@ The pinmap for this board is
 ```
 
 #### Arduino IDE configurations
-To program by Arduino IDE is necessary add the address https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/releases/download/0.0.6/package_heltec_esp32_index.json on **File > Preferences > Additional Boards Manager URL**.  
+- To program by Arduino IDE is necessary add the address https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/releases/download/0.0.6/package_heltec_esp32_index.json on **File > Preferences > Additional Boards Manager URL**.  
 ![Arduino preferences](https://user-images.githubusercontent.com/276504/50922035-c31aea80-1449-11e9-862e-57945f6f8b6a.png)  
-After that step, is necessary add the board. On **Tools > Board > Board Manager** search for **Heltec ESP32** and install.  
-At last, on **Tools > Board > ESP32 Arduino** select **Heltec Wifi LoRa 32(V2)**.  
+- After that step, is necessary add the board. On **Tools > Board > Board Manager** search for **Heltec ESP32** and install.  
+- At last, on **Tools > Board > ESP32 Arduino** select **Heltec Wifi LoRa 32(V2)**.  
 
 ## Other issues
 #### hal/hal.h hal_init()
-In my tests, using Visual Code PlatformIO, I had some issues with the function `hal_init()` on `/arduino-lmic/src/hal/hal.cpp` because duplicity with another function alredy setted on Heltec Lora v2 board to Arduino IDE. So I just change the name of this function and everythings worked fine.
+- In my tests, using Visual Code PlatformIO, I had some issues with the function `hal_init()` on `/arduino-lmic/src/hal/hal.cpp` because duplicity with another function alredy setted on Heltec Lora v2 board to Arduino IDE. So I just change the name of this function and everythings worked fine.
 
 
 ## Credits
-This guide is based on [ERRC 2021](https://github.com/afpastorio/ERRC-2021) repository developed by
+- This guide is based on [ERRC 2021](https://github.com/afpastorio/ERRC-2021) repository developed by
 Francisco Pastório, A., Pedro Cardoso Amâncio de Sá, J., Tavares de Camargo, E., Alexandre Spanhol, F., Antonio Rodrigues, L., & Rossato, J. (2021). Fundamentos de LoRaWAN - Teoria e Prática [Computer software]. https://github.com/afpastorio/ERRC-2021
