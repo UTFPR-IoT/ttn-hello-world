@@ -42,19 +42,19 @@
   </tr>
   <tr>
     <td>DevEUI</td>
-    <td>*can be generate automatically*</td>
+    <td><i>can be generate automatically</i></td>
   </tr>
   <tr>
     <td>AppEUI</td>
-    <td>*must have, at least, a non-zero digit*</td>
+    <td><i>must have, at least, a non-zero digit</i></td>
   </tr>
   <tr>
     <td>AppKey</td>
-    <td>*can be generate aumatically*</td>
+    <td><i>can be generate aumatically</i></td>
   </tr>
   <tr>
     <td>End device ID</td>
-    <td>*An ID for the device* </td>
+    <td><i>An ID for the device</i></td>
   </tr>
 </table> 
 
@@ -80,23 +80,23 @@
  <table>
   <tr>
     <td>DevEUI</td>
-    <td>*can be generate automatically*</td>
+    <td><i>can be generate automatically</i></td>
   </tr>
   <tr>
     <td>Device address</td>
-    <td>*can be generate automatically*/td>
+    <td><i>can be generate automatically</i></td>
   </tr>
   <tr>
     <td>AppSKey</td>
-    <td>*can be generate automatically*/td>
+    <td><i>can be generate automatically</i></td>
   </tr>
   <tr>
     <td>NwkSKey</td>
-    <td>*can be generate automatically*/td>
+    <td><i>can be generate automatically</i></td>
   </tr>
   <tr>
     <td>End device ID</td>
-    <td>*An ID for the device* /td>
+    <td><i>An ID for the device</i></td>
   </tr>
 </table> 
 
