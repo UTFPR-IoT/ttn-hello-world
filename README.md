@@ -8,10 +8,10 @@
   1.3 [ABP end device](#abp-end-device)  
   1.4 [Payload Formatter](#payload-formatter)  
 2. [Software](#software)  
-  2.1 [End devices key configuration](#end-devices-key-configuration)
-  2.2 [ERRC - Saet keys](#errc-saet-keys)
+  2.1 [End devices key configuration](#end-devices-key-configuration)  
+  2.2 [ERRC Saet keys](#errc-saet-keys)  
   2.3 [LMIC library](#lmic-library)  
-  2.4 [Pinmap](#pinmap)
+  2.4 [Pinmap](#pinmap)  
 3. [Hardware](#hardware)  
   3.1 [Heltec LoRa V2](#heltec-lora-v2)  
   3.2 [Arduino IDE configurations](#arduino-ide-configurations)  
@@ -133,7 +133,7 @@ function decodeUplink(input) {
 *important:* In case of OTAA configuration the keys AppEUI and DevEUI must be in lsb format.  
   - You can copy alredy formatted directly by the end device page on TTN. **<>** *Toggle array formatting*, <- -> *Switch byte order*
 
-#### ERRC - SAET keys
+#### ERRC SAET keys
 <table>
   <tr>
     <td>Dispositivo</td>
