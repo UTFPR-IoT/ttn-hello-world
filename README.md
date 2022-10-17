@@ -11,7 +11,8 @@
   2.1 [End devices key configuration](#end-devices-key-configuration)  
   2.2 [ERRC Saet keys](#errc-saet-keys)  
   2.3 [LMIC library](#lmic-library)  
-  2.4 [Pinmap](#pinmap)  
+  2.4 [Heltec library](#heltec-library)
+  2.5 [Pinmap](#pinmap)  
 3. [Hardware](#hardware)  
   3.1 [Heltec LoRa V2](#heltec-lora-v2)  
   3.2 [Arduino IDE configurations](#arduino-ide-configurations)  
@@ -225,6 +226,11 @@ This file should be:
 #define CFG_sx1276_radio 1
 //#define LMIC_USE_INTERRUPTS
 ```
+
+#### Heltec library
+Import Heltec library directly from Arduino IDE  
+** Sketch > Add libraryL**  
+Search for Heltec esp32
 
 #### Pinmap
 - Set LoRa pins on struct (lines 37-42).
