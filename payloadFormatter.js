@@ -15,4 +15,4 @@ function decodeUplink(input){
     warnings: [],
     errors: []
   };
-}
+}*/
